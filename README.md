@@ -93,7 +93,7 @@ Area : <input type="text" name="area" value="{{area}}"></input>m<sup>2</sup><br/
 
 ```
 
-views.py
+urls.py
 ```py
 from django.contrib import admin
 from django.urls import path
