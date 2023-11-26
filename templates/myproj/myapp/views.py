@@ -7,22 +7,22 @@ from django.shortcuts import render
 
 
 
-def rectarea(request):
+def prismarea(request):
     context={}
     context['area'] = "0"
-    context['l'] = "0"
-    context['b'] = "0"
+    context['s'] = "0"
+    context['h'] = "0"
     if request.method == 'POST':
         print("POST method is used")
-        l = request.POST.get('length','0')
-        b = request.POST.get('breadth','0')
+        s = request.POST.get('side','0')
+        h = request.POST.get('height','0')
         print('request=',request)
-        print('Length=',l)
-        print('Breadth=',b)
-        area = int(l) * int(b)
+        print('Side=',s)
+        print('Height=',h)
+        area = 2*int(s)*int(s) + 4*int(h)*int(s)
         context['area'] = area
-        context['l'] = l
-        context['b'] = b
+        context['s'] = s
+        context['h'] = h
         print('Area=',area)
     return render(request,'myapp/math.html',context)
 
